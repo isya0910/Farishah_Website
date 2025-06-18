@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Isya's Friends</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-image: url('img3.jpg');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+    }
+
+    header {
+      background-color: lightpink;
+      color: black;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav {
+      background-color: #f2f2f2;
+      text-align: center;
+      padding: 10px 0;
+      opacity: 0.7;
+    }
+
+    nav a {
+      position: relative;
+      display: inline-block;
+      padding: 5px 10px;
+      color: #404040;
+      font-weight: bold;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -5px;
+      width: 0%;
+      height: 2px;
+      background-color: hotpink;
+      transition: width 0.3s ease;
+    }
+
+    nav a:hover {
+      color: hotpink;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    nav a.active {
+      color: hotpink;
+    }
+
+    nav a.active::after {
+      width: 100%;
+    }
+
+    section {
+      padding: 20px;
+      margin: 100px auto;
+      max-width: 800px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      background-color: #f9f9f9;
+      text-align: center;
+      opacity: 0.7;
+    }
+
+    footer {
+      text-align: center;
+      height: 45px;
+      line-height: 1;
+      background-color: #f1f1f1;
+      color: black;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>&#10084;STEP INTO MY WORLD&#10084;</h1> 
+  </header>
+
+  <nav>
+    <a href="index1.html">ABOUT ME</a>
+    <a href="education.html">EDUCATION</a>
+    <a href="family.html">FAMILY</a>
+    <a href="experience.html">EXPERIENCE</a>
+    <a href="friends.html" class="active">FRIENDS</a>
+    <a href="hobby.html">HOBBY</a>
+    <a href="favouriteplace.html">FAV PLACE</a>
+    <a href="favouritefood.html">FAV FOOD</a>
+    <a href="gallery.html">GALLERY</a>
+  </nav>
+
+  <section>
+    <h3>MY FRIENDS</h3>
+    <p>University life wouldn’t be the same without my friends — from late-night talks to spontaneous adventures, they made every moment more fun and unforgettable.</p>
+  </section>
+
+  <div style="text-align: center; margin-top: 10px;">
+    <audio controls autoplay>
+      <source src="Ungu - Tercipta Untukku.mp3" type="audio/mp3">
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+
+  <footer>
+    <p>All right reserved by IsyaaFairus, 2025</p><br>
+  </footer>
+
+</body>
+</html>
