@@ -13,11 +13,21 @@
       background-size: cover;
     }
 
+    .clock-container {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      text-align: right;
+      font-size: 12px;
+      color: #444;
+    }
+
     header {
       background-color: lightpink;
       color: black;
       padding: 20px;
       text-align: center;
+      position: relative;
     }
 
     nav {
@@ -56,7 +66,8 @@
       width: 100%;
     }
 
-    nav a.active {
+    nav a.active,
+    nav a.active:hover {
       color: hotpink;
     }
 
@@ -125,11 +136,21 @@
 <body>
 
   <header>
-    <h1>&#10084;STEP INTO MY WORLD&#10084;</h1> 
+    <div class="clock-container">
+      <p id="clock">🕒 --:--:--</p>
+      <p id="date">📅 --/--/----</p>
+    </div>
+    <div style="display: flex; flex-direction: column; align-items: center;">
+      <div style="display: flex; align-items: center; gap: 15px;">
+        <img src="photo.jpg" alt="My Photo" style="width:80px; height:80px; border-radius:50%; border: 2px solid white;">
+        <h1 style="margin: 0;">&#10084;STEP INTO MY WORLD&#10084;</h1>
+      </div>
+      <p style="margin-top: 0px; font-style: italic; font-size: 12px;">"Smile, explore, and be yourself!"</p>
+    </div>
   </header>
 
   <nav>
-    <a href="index1.html">ABOUT ME</a>
+    <a href="index.html">ABOUT ME</a>
     <a href="education.html">EDUCATION</a>
     <a href="family.html">FAMILY</a>
     <a href="experience.html" class="active">EXPERIENCE</a>
@@ -147,7 +168,6 @@
 
   <section>
     <div class="timeline">
-
       <div class="timeline-item">
         <img src="img38.jpg" alt="Train to Dabong" class="timeline-img">
         <div class="timeline-content">
@@ -179,13 +199,40 @@
           <p>A unique experience of cold rivers and thick forest, perfect for nature explorers!</p>
         </div>
       </div>
-
     </div>
   </section>
 
   <footer>
     <p>All right reserved by IsyaaFairus, 2025</p><br>
   </footer>
+
+  <script>
+    // Highlight page link
+    const currentPage = window.location.pathname.split('/').pop();
+    const navLinks = document.querySelectorAll('nav a');
+    navLinks.forEach(link => {
+      if (link.getAttribute('href') === currentPage) {
+        link.classList.add('active');
+      }
+    });
+
+    // Clock and Date
+    function updateClockAndDate() {
+      const now = new Date();
+      const time = now.toLocaleTimeString('en-GB');
+      const date = now.toLocaleDateString('en-GB', {
+        weekday: 'long',
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric'
+      });
+      document.getElementById('clock').textContent = '🕒 ' + time;
+      document.getElementById('date').textContent = '📅 ' + date;
+    }
+
+    setInterval(updateClockAndDate, 1000);
+    updateClockAndDate();
+  </script>
 
 </body>
 </html>
